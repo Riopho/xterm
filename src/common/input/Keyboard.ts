@@ -327,7 +327,13 @@ export function evaluateKeyboardEvent(
       } else {
         result.key = C0.ESC + '[24~';
       }
-      break;
+		  break;
+	  case 191:
+		  if (ev.ctrlKey)
+		  {
+			  result.key = C0.US;
+		  }
+		  break;
     default:
       // a-z and space
       if (ev.ctrlKey && !ev.shiftKey && !ev.altKey && !ev.metaKey) {
