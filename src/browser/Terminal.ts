@@ -1119,7 +1119,7 @@ export class Terminal extends CoreTerminal implements ITerminal {
   private _isThirdLevelShift(browser: IBrowser, ev: KeyboardEvent): boolean {
     const thirdLevelKey =
       (browser.isMac && !this.options.macOptionIsMeta && ev.altKey && !ev.ctrlKey && !ev.metaKey) ||
-      (browser.isWindows && ev.altKey && ev.ctrlKey && !ev.metaKey) ||
+      //(browser.isWindows && ev.altKey && ev.ctrlKey && !ev.metaKey) ||
       (browser.isWindows && ev.getModifierState('AltGraph'));
 
     if (ev.type === 'keypress') {
